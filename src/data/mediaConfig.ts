@@ -24,10 +24,14 @@ export interface MediaConfig {
   };
 }
 
+const BASE = import.meta.env.BASE_URL.endsWith('/')
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+
 export const MEDIA_CONFIG: MediaConfig = {
   video: {
-    src: '/media/Reef_Runner_Full_Explainer.mp4',
-    poster: '/media/reef-runner-lifejacket-attendant.jpg',
+    src: `${BASE}media/Reef_Runner_Full_Explainer.mp4`,
+    poster: `${BASE}media/reef-runner-lifejacket-attendant.jpg`,
     title: 'Reef Runner — Full Concept Explainer',
     durationEstimateSeconds: 110, // ~1m 50s
     chapters: [
@@ -104,8 +108,8 @@ export const MEDIA_CONFIG: MediaConfig = {
     ]
   },
   photos: {
-    heroBoat: '/media/reef-runner-lifejacket-attendant.jpg',
-    scanAtDock: '/media/reef-runner-scan-dock.jpg',
-    lifejacketFitting: '/media/reef-runner-lifejacket-attendant.jpg'
+    heroBoat: `${BASE}media/reef-runner-lifejacket-attendant.jpg`,
+    scanAtDock: `${BASE}media/reef-runner-scan-dock.jpg`,
+    lifejacketFitting: `${BASE}media/reef-runner-lifejacket-attendant.jpg`
   }
 };
